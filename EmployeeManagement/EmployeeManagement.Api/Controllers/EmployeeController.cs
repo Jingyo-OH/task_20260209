@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Api.Controllers
 {
+    /// <summary>
+    /// 사원 관리 및 데이터 임포트를 담당하는 API 컨트롤러
+    /// </summary>
+    [Tags("사원 관리 API")]
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController (
@@ -16,8 +20,15 @@ namespace EmployeeManagement.Api.Controllers
     {
         #region[Employee Paging]
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetEmployees([FromQuery] PagingRequest paging)
         {
+            if (paging.Page <= 0)
+            {
+                return BadRequest(new { message = "Page must be greater than 0" });
+            }
+
             var query = new EmployeePagingQuery(paging.Page, paging.PageSize);
             var (data, totalCount) = await _pagingHandler.Handle(query);
 
@@ -36,6 +47,9 @@ namespace EmployeeManagement.Api.Controllers
 
         #region[Employee Detail By Name]
         [HttpGet("{name}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EmployeeDto))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetEmployeeByName(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -54,6 +68,7 @@ namespace EmployeeManagement.Api.Controllers
         #region[Employee Import]
         [HttpPost]
         [Consumes("multipart/form-data")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Import([FromForm] EmployeeImportRequest request)
         {
             var (isValid, errorMessage) = request.Validate();
