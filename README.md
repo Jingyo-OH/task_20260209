@@ -1,12 +1,18 @@
 # task_20260209
 Employee management API supporting CSV and JSON data import
 
+# ğŸ“¢ í”„ë¡œì íŠ¸ ìš”ì•½ ë° ì•ˆë‚´
+(ì»¤ë°‹ ë©”ì‹œì§€ ì¸ì½”ë”© ë¬¸ì œë¡œ ì¸í•´ ìƒì„¸ êµ¬í˜„ ë‚´ìš©ì„ ì—¬ê¸°ì— ê¸°ì¬í•©ë‹ˆë‹¤.)
+- **êµ¬í˜„ ê¸°ëŠ¥**: ì‚¬ì› í˜ì´ì§• ì¡°íšŒ, ì´ë¦„ ê²€ìƒ‰, CSV ì„í¬íŠ¸ ì™„ë£Œ
+- **í…ŒìŠ¤íŠ¸**: xUnit ê¸°ë°˜ ì„±ê³µ/ì‹¤íŒ¨ ì¼€ì´ìŠ¤ í…ŒìŠ¤íŠ¸ ì½”ë“œ ì‘ì„±
+- **ë¬¸ì„œí™”**: .NET 9 OpenAPI/Swagger UI ì ìš©
+  
 ---
 
 ## Employee Management API
 
-Á÷¿øÀÇ ±âº» ¿¬¶ô Á¤º¸¸¦ °ü¸®ÇÏ±â À§ÇÑ REST APIÀÔ´Ï´Ù.  
-Á÷¿ø Á¤º¸´Â CSV ¶Ç´Â JSON ÆÄÀÏÀ» ÅëÇØ Ãß°¡ÇÒ ¼ö ÀÖ½À´Ï´Ù.
+ì§ì›ì˜ ê¸°ë³¸ ì—°ë½ ì •ë³´ë¥¼ ê´€ë¦¬í•˜ê¸° ìœ„í•œ REST APIì…ë‹ˆë‹¤.  
+ì§ì› ì •ë³´ëŠ” CSV ë˜ëŠ” JSON íŒŒì¼ì„ í†µí•´ ì¶”ê°€í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 
 A REST API for managing employee basic contact information.  
 Employee data can be imported using CSV or JSON files.
@@ -25,9 +31,9 @@ Employee data can be imported using CSV or JSON files.
 ## Features
 
 ### Korean
-- Á÷¿ø ±âº» ¿¬¶ô Á¤º¸ Á¶È¸
-- CSV ÆÄÀÏÀ» ÅëÇÑ Á÷¿ø Á¤º¸ Ãß°¡
-- JSON ÆÄÀÏÀ» ÅëÇÑ Á÷¿ø Á¤º¸ Ãß°¡
+- ì§ì› ê¸°ë³¸ ì—°ë½ ì •ë³´ ì¡°íšŒ
+- CSV íŒŒì¼ì„ í†µí•œ ì§ì› ì •ë³´ ì¶”ê°€
+- JSON íŒŒì¼ì„ í†µí•œ ì§ì› ì •ë³´ ì¶”ê°€
 
 ### English
 - Retrieve employee contact information
@@ -42,7 +48,7 @@ Employee data can be imported using CSV or JSON files.
 ```json
 [
   {
-    "name": "È«±æµ¿",
+    "name": "í™ê¸¸ë™",
     "email": "hong@test.com",
     "tel": "010-1234-5678",
     "joined": "2012-01-05"
@@ -65,7 +71,7 @@ Employee data can be imported using CSV or JSON files.
 ### CSV (Korean Example)
 ```csv
 name,email,tel,joined
-È«±æµ¿,hong@test.com,010-1234-5678,2012-01-05
+í™ê¸¸ë™,hong@test.com,010-1234-5678,2012-01-05
 ```
 
 ### CSV (English Example)
@@ -73,5 +79,6 @@ name,email,tel,joined
 name,email,tel,joined
 John Doe,john@test.com,010-1234-5678,2012-01-05
 ```
+
 
 
